@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                         color: AppColors.primaryText
                       ),
                         elevation: 0, backgroundColor: Colors.white)),
-                home: const Welcome(),
+                //home: const Welcome(),
                 onGenerateRoute: AppPages.GenerateRouteSettings ,
                 //initialRoute: "/",
                 // routes: {
