@@ -55,7 +55,7 @@ class SignInController {
           var user = credential.user;
           if (user != null) {
             String? displayName = user.displayName;
-            String? email = user.email;git branch -M main
+            String? email = user.email;
             String? id = user.uid;
             String? photoUrl = user.photoURL;
             print("my url is ${photoUrl}");
