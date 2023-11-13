@@ -36,33 +36,33 @@ class _RegisterState extends State<Register> {
 
                   Center(
                       child:
-                      reusbaleText("Enter your details below and free sign up!")),
+                      reuseableText("Enter your details below and free sign up!")),
                   Container(
                     margin: EdgeInsets.only(top: 60.h),
                     padding: EdgeInsets.only(left: 25.w, right: 25.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        reusbaleText("User Name"),
+                        reuseableText("User Name"),
                         buildTextField(
                             "Enter your username", "name", "user",
                                 (value) {
                               context.read<RegisterBlocs>().add(UserNameEvent(value));
                             }),
 
-                        reusbaleText("Email"),
+                        reuseableText("Email"),
                         buildTextField(
                             "Enter your Email", "email", "user",
                                 (value) {
                               context.read<RegisterBlocs>().add(EmailEvent(value));
                             }),
-                        reusbaleText("Password"),
+                       reuseableText("Password"),
 
                         buildTextField(
-                            "Enter your Username", "password", "lock", (value) {
+                            "Enter your Password", "password", "lock", (value) {
                           context.read<RegisterBlocs>().add(PasswordEvent(value));
                         }),
-                        reusbaleText("Re-enter your Password"),
+                        reuseableText("Re-enter your Password"),
 
                         buildTextField(
                             "Confirm your password", "password", "lock", (value) {
@@ -73,10 +73,10 @@ class _RegisterState extends State<Register> {
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 25.w),
-                    child: reusbaleText("By creating an account you have to agree with our therm & condition"),
+                    child: reuseableText("By creating an account you have to agree with our therm & condition"),
                   ),
 
-                  buildLogInAndRegButton("Sign Up", "login", () {
+                  buildLogInAdnRegButton("Sign Up", "login", () {
                     //Navigator.of(context).pushNamed("register");
                     RegisterController(context:context).handleEmailRegister();
 

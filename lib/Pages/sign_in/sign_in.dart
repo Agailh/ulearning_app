@@ -33,14 +33,14 @@ class _SignInState extends State<SignIn> {
                   buildThirdPartyLogin(context),
                   Center(
                       child:
-                          reusbaleText("Or use your email account to log in")),
+                          reuseableText("Or use your email account to log in")),
                   Container(
                     margin: EdgeInsets.only(top: 36.h),
                     padding: EdgeInsets.only(left: 25.w, right: 25.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        reusbaleText("Email"),
+                        reuseableText("Email"),
                         SizedBox(
                           height: 5.h,
                         ),
@@ -49,7 +49,7 @@ class _SignInState extends State<SignIn> {
                             (value) {
                           context.read<SignInBloc>().add(EmailEvent(value));
                         }),
-                        reusbaleText("Password"),
+                        reuseableText("Password"),
                         SizedBox(
                           height: 5.h,
                         ),
@@ -62,10 +62,10 @@ class _SignInState extends State<SignIn> {
                   ),
                   forgotPassword(),
                   SizedBox(height: 70.h,),
-                  buildLogInAndRegButton("LogIn", "login", () {
+                  buildLogInAdnRegButton("LogIn", "login", () {
                     SignInController(context: context).handleSignIn("email");
                   }),
-                  buildLogInAndRegButton("Sign Up", "register", () {
+                  buildLogInAdnRegButton("Sign Up", "register", () {
                     Navigator.of(context).pushNamed("/register");
 
                   }),

@@ -8,7 +8,7 @@ AppBar buildAppbar(){
   return AppBar(
     title: Container(
     child: Container(
-      child:  reusbaleText("setting")
+      child:  reuseableText("setting")
     ),
     ),
   );

@@ -58,7 +58,7 @@ Widget _reusableIcons(String iconName) {
   );
 }
 
-Widget reusbaleText(String text) {
+Widget reuseableText(String text) {
   return Container(
     margin: EdgeInsets.only(
       bottom: 5.h,
@@ -143,7 +143,7 @@ Widget forgotPassword() {
   );
 }
 
-Widget buildLogInAndRegButton(String buttonName, String buttonType, void Function()? func) {
+Widget buildLogInAdnRegButton(String buttonName, String buttonType, void Function()? func) {
   return GestureDetector(
       onTap: func,
       child: Container(
