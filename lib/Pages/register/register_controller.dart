@@ -14,7 +14,7 @@ class RegisterController{
 
   Future<void> handleEmailRegister() async {
 
-    final state = context.read<RegisterBlocs>().state;
+  final state = context.read<RegisterBlocs>().state;
     String userName = state.userName;
     String email = state.email;
     String password = state.password;
@@ -46,7 +46,7 @@ class RegisterController{
       if(credential.user!=null){
         await credential.user?.sendEmailVerification();
         await credential.user?.updateDisplayName(userName);
-        String photoUrl = "uploads/default.png";
+        String photoUrl = "${AppConstants.SERVER_API_URL}uploads/default.png";
         await credential.user?.updatePhotoURL(photoUrl);
 
         toastInfo(msg: "An email has been sent to your registered email. To activate it please check your email box and click on the link");

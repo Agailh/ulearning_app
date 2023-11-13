@@ -26,7 +26,8 @@ class HttpUtil {
       {dynamic data, Map<String, dynamic>? queryParameters}) async {
     var response =
         await dio.post(path, data: data, queryParameters: queryParameters);
-
+    print("my response data is ${response.toString()}");
+    print("my status code is ${response.statusCode.toString()}");
     return response.data;
   }
 }

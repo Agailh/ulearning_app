@@ -72,7 +72,8 @@ class SignInController {
 
             print("user exist");
             asyncPostAllData(loginRequestEntity);
-
+           // Global.storageService.setString(AppConstants.STORAGE_USER_TOKEN_KEY, "123456");
+           // Navigator.of(context).pushNamedAndRemoveUntil("/application", (route) => false);
             //verified user from firebase
           } else {
             toastInfo(msg: "currently you are not user");
