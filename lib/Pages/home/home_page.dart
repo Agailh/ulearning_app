@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/Pages/home/bloc/home_page_bloc.dart';
 import 'package:ulearning_app/Pages/home/bloc/home_page_states.dart';
+import 'package:ulearning_app/Pages/home/home_controller.dart';
 import 'package:ulearning_app/Pages/home/widgets/home_page_widgets.dart';
 import 'package:ulearning_app/common/values/colors.dart';
 
@@ -18,11 +20,23 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  late HomeController _homeController;
+
+  @override 
+  void initState(){
+    super.initState();
+    _homeController = HomeController(context: context);
+    _homeController.init();
+    
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _homeController.userProfile!=null? Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(),
+      appBar: buildAppBar(_homeController.userProfile!.avatar.toString()),
       body: BlocBuilder<HomePagesBloc, HomePageStates>(
         builder: (context, state){
           return Container(
@@ -39,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SliverToBoxAdapter(
                   child: homePageText(
-                    "qimtronics",
+                    _homeController.userProfile!.name!,
                     top: 20,
                   ),
                 ),
@@ -83,6 +97,6 @@ class _HomePageState extends State<HomePage> {
           );
         },
       )
-    );
+    ):Container();
   }
 }
