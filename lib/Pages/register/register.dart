@@ -10,7 +10,7 @@ import 'package:ulearning_app/Pages/register/register_controller.dart';
 
 
 class Register extends StatefulWidget {
-  const Register({super.key});
+  const Register({Key? key}) : super(key: key);
 
   @override
   State<Register> createState() => _RegisterState();
