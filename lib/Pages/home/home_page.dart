@@ -10,6 +10,7 @@ import 'package:ulearning_app/Pages/home/bloc/home_page_bloc.dart';
 import 'package:ulearning_app/Pages/home/bloc/home_page_states.dart';
 import 'package:ulearning_app/Pages/home/home_controller.dart';
 import 'package:ulearning_app/Pages/home/widgets/home_page_widgets.dart';
+import 'package:ulearning_app/common/routes/routes.dart';
 import 'package:ulearning_app/common/values/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -83,7 +84,9 @@ class _HomePageState extends State<HomePage> {
                     (BuildContext context, int index){
                       return GestureDetector(
                         onTap: (){
-
+                              Navigator.of(context).pushNamed(
+                                AppRoutes.
+                              );
                         },
                         child: courseGrid(state.courseItem[index])
                       );
