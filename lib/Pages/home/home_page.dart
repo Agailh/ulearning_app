@@ -85,7 +85,10 @@ class _HomePageState extends State<HomePage> {
                       return GestureDetector(
                         onTap: (){
                               Navigator.of(context).pushNamed(
-                                AppRoutes.
+                                AppRoutes.COURSE_DETAIL,
+                                arguments: {
+                                  "id":state.courseItem.elementAt(index).id
+                                }
                               );
                         },
                         child: courseGrid(state.courseItem[index])
