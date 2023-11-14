@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:ulearning_app/Pages/welcome/welcome.dart';
+//import 'package:ulearning_app/Pages/welcome/welcome.dart';
 
 
 import 'package:ulearning_app/common/routes/routes.dart';

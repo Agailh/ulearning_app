@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+//import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/Pages/Profile/settings/bloc/settings_bloc.dart';
 import 'package:ulearning_app/Pages/Profile/settings/bloc/settings_states.dart';
 import 'package:ulearning_app/Pages/application/bloc/app_blocs.dart';

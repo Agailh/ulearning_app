@@ -9,7 +9,7 @@ import 'package:ulearning_app/Pages/welcome/bloc/welcome_states.dart';
 import 'package:ulearning_app/common/values/colors.dart';
 import 'package:ulearning_app/common/values/constant.dart';
 import 'package:ulearning_app/global.dart';
-import 'package:ulearning_app/main.dart';
+//import 'package:ulearning_app/main.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});

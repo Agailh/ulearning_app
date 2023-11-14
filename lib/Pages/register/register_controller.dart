@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ulearning_app/common/values/constant.dart';
+//import 'package:ulearning_app/common/values/constant.dart';
 import 'package:ulearning_app/common/widgets/flutter_toast.dart';
 import 'package:ulearning_app/pages/register/bloc/register_blocs.dart';
-import 'package:ulearning_app/pages/welcome/bloc/welcome_blocs.dart';
-import 'package:ulearning_app/pages/welcome/bloc/welcome_events.dart';
+//import 'package:ulearning_app/pages/welcome/bloc/welcome_blocs.dart';
+//import 'package:ulearning_app/pages/welcome/bloc/welcome_events.dart';
 
 class RegisterController{
   final BuildContext context;
