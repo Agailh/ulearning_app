@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/Pages/home/bloc/home_page_bloc.dart';
 import 'package:ulearning_app/Pages/home/bloc/home_page_events.dart';
 import 'package:ulearning_app/Pages/home/bloc/home_page_states.dart';
+import 'package:ulearning_app/common/entities/course.dart';
 import 'package:ulearning_app/common/values/colors.dart';
 import 'package:ulearning_app/common/values/constant.dart';
 import 'package:ulearning_app/common/widgets/base_text_widget.dart';
@@ -215,16 +216,16 @@ Widget _reuseableMenuText(String menuText, {Color textColor= AppColors.primaryEl
 }
 
 // for course grid view UI
-Widget courseGrid(){
+Widget courseGrid(CourseItem item){
   return Container(
     padding: EdgeInsets.all(12.w),
 
 
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.w),
-        image: const DecorationImage(
+        image:  DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage("assets/icons/Image(1).png")
+            image: NetworkImage(AppConstants.SERVER_UPLOADS+item.thumbnail!)
         )
     ),
     child: Column(
@@ -233,7 +234,7 @@ Widget courseGrid(){
       children: [
 
         Text(
-          "Best course for IT and Engineering",
+          item.name??"",
           maxLines: 1,
           overflow: TextOverflow.fade,
           textAlign: TextAlign.left,
@@ -245,7 +246,7 @@ Widget courseGrid(){
           ),
         ),
         Text(
-          "Flutter best course",
+          item.description??"",
           maxLines: 1,
           overflow: TextOverflow.fade,
           textAlign: TextAlign.left,

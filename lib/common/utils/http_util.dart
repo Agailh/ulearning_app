@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:ulearning_app/common/values/constant.dart';
+import 'package:ulearning_app/global.dart';
 
 class HttpUtil {
   static HttpUtil _instance = HttpUtil._internal();
@@ -23,11 +24,25 @@ class HttpUtil {
   }
 
   Future post(String path,
-      {dynamic data, Map<String, dynamic>? queryParameters}) async {
+      {dynamic mydata, Map<String, dynamic>? queryParameters, Options? options}) async {
+        Options requestOptions =options?? Options();
+        requestOptions.headers = requestOptions.headers?? {};
+        Map<String, dynamic>? authorization = getAuthorizationHeader();
+        if(authorization != null){
+          requestOptions.headers!.addAll(authorization);
+        }
     var response =
-        await dio.post(path, data: data, queryParameters: queryParameters);
+        await dio.post(path, data: mydata, queryParameters: queryParameters, options: requestOptions);
     print("my response data is ${response.toString()}");
     print("my status code is ${response.statusCode.toString()}");
     return response.data;
+  }
+  Map<String, dynamic>? getAuthorizationHeader(){
+    var headers = <String, dynamic>{};
+    var accessToken = Global.storageService.getUserToken();
+    if(accessToken.isNotEmpty){
+      headers['Authorization']= 'Bearer $accessToken';
+    }
+    return headers;
   }
 }

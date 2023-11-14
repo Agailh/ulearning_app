@@ -105,9 +105,12 @@ class SignInController {
       if(result.code==200){
         try{
           Global.storageService.setString((AppConstants.STORAGE_USER_PROFILE_KEY), jsonEncode(result.data!));
+          //used for auth 
           Global.storageService.setString(AppConstants.STORAGE_USER_TOKEN_KEY, result.data!.access_token!);
           EasyLoading.dismiss();
-          Navigator.of(context).pushNamedAndRemoveUntil("/application", (route) => false);
+          if(context.mounted){
+            Navigator.of(context).pushNamedAndRemoveUntil("/application", (route) => false);
+          }
         }catch (e){
           print("saving local storeage error ${e.toString()}");
         }
