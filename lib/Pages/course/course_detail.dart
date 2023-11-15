@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/Pages/course/course_detail_controller.dart';
 import 'package:ulearning_app/Pages/course/widgets/course_detail_widgets.dart';
 import 'package:ulearning_app/common/values/colors.dart';
 import 'package:ulearning_app/common/widgets/base_text_widget.dart';
@@ -13,7 +14,7 @@ class CourseDetail extends StatefulWidget {
 }
 
 class _CourseDetailState extends State<CourseDetail> {
-  late var id;
+  late CourseDetailController _courseDetailController;
 
   @override
   void initState(){
@@ -24,8 +25,8 @@ class _CourseDetailState extends State<CourseDetail> {
   @override
   void didChangeDependencies(){
     super.didChangeDependencies();
-    id = ModalRoute.of(context)!.settings.arguments as Map;
-    print(id.values.toString());
+    _courseDetailController = CourseDetailController(context: context);
+    _courseDetailController.init();
   }
 
 

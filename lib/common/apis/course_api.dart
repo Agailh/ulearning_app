@@ -9,4 +9,14 @@ class CourseAPI{
     print(response.toString());
     return CourseListResponseEntity.fromJson(response);
   }
+
+  static Future<CourseListResponseEntity> courseDetail({CourseRequestEntity? params}) async {
+    var response = await HttpUtil().post(
+      'api/courseDetail',
+      queryParameters: params?.toJson()
+    );
+    print(response.toString());
+    print(response.toString());
+    return CourseListResponseEntity.fromJson(response);
+  }
 }
