@@ -52,7 +52,7 @@ class AppPages{
       PageEntity(
           route: AppRoutes.COURSE_DETAIL,
           page: const CourseDetail(),
-          bloc: BlocProvider(create: (_)=>CourseDetailBloc(),)),
+          bloc: BlocProvider(create: (_)=>CourseBloc(),)),
 
     ];
   }

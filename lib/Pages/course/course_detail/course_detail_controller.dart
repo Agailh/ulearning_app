@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ulearning_app/Pages/course/bloc/course_blocs.dart';
 import 'package:ulearning_app/common/entities/course.dart';
 import 'package:ulearning_app/common/widgets/flutter_toast.dart';
 
@@ -18,7 +20,7 @@ class CourseDetailController{
     courseRequestEntity.id = id;
    var result = await CourseAPI.courseDetail(params:courseRequestEntity);
    if(result.code ==200){
-
+    //context.read<CourseDetailBloc
    }else{
     toastInfo(msg: "samting wen wong");
     print('-----------------------------Error code ${result.code}-----------------------------');

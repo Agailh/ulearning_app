@@ -1,13 +1,13 @@
 import 'package:ulearning_app/common/entities/course.dart';
 
-class CourseDetailStates{
-  const CourseDetailStates({
+class CourseStates{
+  const CourseStates({
       this.courseItem}
   );
 
   final CourseItem? courseItem;
-  CourseDetailStates copyWith({CourseItem? courseItem}){
-    return CourseDetailStates(
+  CourseStates copyWith({CourseItem? courseItem}){
+    return CourseStates(
        courseItem:courseItem??this.courseItem
     );
   }
