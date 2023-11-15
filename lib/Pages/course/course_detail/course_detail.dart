@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ulearning_app/Pages/course/course_detail_controller.dart';
+import 'package:ulearning_app/Pages/course/course_detail/course_detail_controller.dart';
 import 'package:ulearning_app/Pages/course/widgets/course_detail_widgets.dart';
 import 'package:ulearning_app/common/values/colors.dart';
 import 'package:ulearning_app/common/widgets/base_text_widget.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ulearning_app/Pages/course/bloc/course_detail_events.dart';
-import 'package:ulearning_app/Pages/course/bloc/course_detail_states.dart';
+import 'package:ulearning_app/Pages/course/bloc/course_events.dart';
+import 'package:ulearning_app/Pages/course/bloc/course_states.dart';
 
 class CourseDetailBloc extends Bloc<CourseDetailEvents, CourseDetailStates>{
   CourseDetailBloc():super(const CourseDetailStates()){

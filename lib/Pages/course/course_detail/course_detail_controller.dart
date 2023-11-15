@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:ulearning_app/common/entities/course.dart';
 import 'package:ulearning_app/common/widgets/flutter_toast.dart';
 
-import '../../common/apis/course_api.dart';
+import '../../../common/apis/course_api.dart';
 
 class CourseDetailController{
   final BuildContext context;
