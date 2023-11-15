@@ -20,7 +20,7 @@ class CourseDetailController{
    if(result.code ==200){
 
    }else{
-    toastInfo(msg: "samting wen wong"),
+    toastInfo(msg: "samting wen wong");
     print('-----------------------------Error code ${result.code}-----------------------------');
    }
   }
