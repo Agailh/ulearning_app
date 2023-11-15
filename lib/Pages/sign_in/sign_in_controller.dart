@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:ulearning_app/Pages/home/home_controller.dart';
 import 'package:ulearning_app/Pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:ulearning_app/common/apis/user_api.dart';
 import 'package:ulearning_app/common/entities/entities.dart';
@@ -71,7 +72,10 @@ class SignInController {
 
 
             print("user exist");
-            asyncPostAllData(loginRequestEntity);
+            await asyncPostAllData(loginRequestEntity);
+            if(context.mounted){
+              await HomeController(context: context).init();
+            }
            // Global.storageService.setString(AppConstants.STORAGE_USER_TOKEN_KEY, "123456");
            // Navigator.of(context).pushNamedAndRemoveUntil("/application", (route) => false);
             //verified user from firebase

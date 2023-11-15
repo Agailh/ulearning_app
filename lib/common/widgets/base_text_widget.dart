@@ -4,7 +4,7 @@ import 'package:ulearning_app/common/values/colors.dart';
 
 Widget reuseableText(String text,
     {Color color = AppColors.primaryText,
-      int fontSize = 16,
+      double fontSize = 16,
       FontWeight fontWeight = FontWeight.bold}) {
   return Container(
     child: Text(
