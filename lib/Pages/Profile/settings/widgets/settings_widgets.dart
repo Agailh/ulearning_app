@@ -4,15 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/Pages/common_widgets.dart';
 //import 'package:ulearning_app/common/values/colors.dart';
 
-AppBar buildAppbar(){
-  return AppBar(
-    title: Container(
-    child: Container(
-      child:  reuseableText("setting")
-    ),
-    ),
-  );
-}
+// AppBar buildAppbar(){
+//   return AppBar(
+//     title: Container(
+//     child: Container(
+//       child:  reuseableText("setting")
+//     ),
+//     ),
+//   );
+// }
 
 Widget settingsButton(BuildContext context, void Function()? func){
   return GestureDetector(

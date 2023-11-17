@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/Pages/course/course_detail/bloc/course_detail_states.dart';
 import 'package:ulearning_app/common/values/colors.dart';
+import 'package:ulearning_app/common/values/constant.dart';
 import 'package:ulearning_app/common/widgets/base_text_widget.dart';
 
-AppBar buildAppBar() {
-  return AppBar(
-    title: reuseableText("Course detail"),
-  );
-}
 
-Widget thumbnail() {
+
+Widget thumbnail(String thumbnail) {
   return Container(
     width: 325.w,
     height: 200.h,
-    decoration: const BoxDecoration(
+    decoration:  BoxDecoration(
         image: DecorationImage(
             fit: BoxFit.fitWidth,
-            image: AssetImage("assets/icons/Image(1).png"))),
+            image: NetworkImage("${AppConstants.SERVER_UPLOADS}$thumbnail"))),
   );
 }
 
@@ -83,9 +81,9 @@ Widget goBuyButton(String name) {
   );
 }
 
-Widget descriptionText() {
+Widget descriptionText(String description) {
   return reuseableText(
-      "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+      description,
       color: AppColors.primaryThridElementText,
       fontWeight: FontWeight.normal,
       fontSize: 11.sp);
@@ -96,16 +94,17 @@ Widget courseSummaryTitle() {
   //setting section buttons
 }
 
-var imagesInfo = <String, String>{
-  "36 Hours videos": "video_detail.png",
-  "Total 30 lessons": "file_detail.png",
-  "67 downloadable resources": "download_detail.png",
-};
+
 void func() {
   print("ontapped");
 }
 
-Widget courseSummaryView(BuildContext context) {
+Widget courseSummaryView(BuildContext context, CourseDetailStates state) {
+  var imagesInfo = <String, String>{
+    "${state.courseItem!.video_len??"0".toString()} Hours videos": "video_detail.png",
+    "Total ${state.courseItem!.lesson_num??"0".toString()} lessons": "file_detail.png",
+    "${state.courseItem!.down_num??"0".toString()} downloadable resources": "download_detail.png",
+  };
   return Column(
     children: [
       ...List.generate(

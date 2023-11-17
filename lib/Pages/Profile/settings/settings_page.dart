@@ -10,6 +10,7 @@ import 'package:ulearning_app/Pages/home/bloc/home_page_bloc.dart';
 import 'package:ulearning_app/Pages/home/bloc/home_page_events.dart';
 import 'package:ulearning_app/common/routes/names.dart';
 import 'package:ulearning_app/common/values/constant.dart';
+import 'package:ulearning_app/common/widgets/base_text_widget.dart';
 import 'package:ulearning_app/global.dart';
 import '../settings/widgets/settings_widgets.dart';
 
@@ -32,7 +33,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppbar(),
+      appBar: buildAppBar("Settings"),
       body: SingleChildScrollView(
         child: Container(
         child: BlocBuilder<SettingsBlocs, SettingStates>(

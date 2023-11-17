@@ -162,7 +162,7 @@ class CourseItem {
   String? amount_total;
   int? lesson_num;
   int? video_len;
-  //int? down_num;
+  int? down_num;
   //int? follow;
   //int? score;
   int? id;
@@ -177,7 +177,7 @@ class CourseItem {
     this.amount_total,
     this.lesson_num,
     this.video_len,
-   //this.down_num,
+   this.down_num,
     //this.follow,
     //this.score,
     this.id,
@@ -194,7 +194,7 @@ class CourseItem {
         amount_total: json["amount_total"],
         lesson_num: json["lesson_num"],
         video_len: json["video_length"],
-       // down_num: json["down_num"],
+        down_num: json["downloadable_res"],
        // follow: json["follow"],
        // score: json["score"],
         id: json["id"],
