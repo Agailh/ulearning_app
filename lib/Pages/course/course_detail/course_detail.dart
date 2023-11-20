@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/Pages/course/course_detail/bloc/course_detail_blocs.dart';
 import 'package:ulearning_app/Pages/course/course_detail/bloc/course_detail_states.dart';
 import 'package:ulearning_app/Pages/course/course_detail/course_detail_controller.dart';
-import 'package:ulearning_app/Pages/course/widgets/course_detail_widgets.dart';
+import 'package:ulearning_app/Pages/course/course_detail/widgets/course_detail_widgets.dart';
+
 import 'package:ulearning_app/common/values/colors.dart';
 import 'package:ulearning_app/common/widgets/base_text_widget.dart';
 
@@ -87,7 +88,7 @@ class _CourseDetailState extends State<CourseDetail> {
                                   reuseableText("Lesson List"),
                                   SizedBox(height: 20.h,),
                                   //course lesson list
-                                  courseLessonList()
+                                  courseLessonList(state)
 
                                 ]),
                           )

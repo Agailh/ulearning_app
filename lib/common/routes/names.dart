@@ -13,6 +13,8 @@ class AppRoutes {
   static const SETTINGS = "/settings";
  //for showing course detail 
  static const COURSE_DETAIL = "/course_detail";
+ //LESSON DETAIL
+  static const LESSON_DETAIL = "/lesson_detail";
  //pay web view
  static const PAY_WEB_VIEW = "/pay_web_view";
 }

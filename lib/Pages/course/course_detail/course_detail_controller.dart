@@ -32,6 +32,7 @@ class CourseDetailController{
      if(context.mounted){
        print("+++++++++++++++++context is ready");
        context.read<CourseDetailBloc>().add(TriggerCourseDetail(result.data!));
+
      }else{
        print("context is not avaliable");
 
@@ -43,23 +44,23 @@ class CourseDetailController{
    }
   }
 
-    asyncLoadLessonData(int? id) async {
+  asyncLoadLessonData(int? id) async {
     LessonRequestEntity lessonRequestEntity = LessonRequestEntity();
     lessonRequestEntity.id = id;
     var result = await LessonAPI.lessonList(params:lessonRequestEntity);
-    print('-----my lesson data ${result.data?.length.toString()}-------');
     if(result.code==200){
-     if(context.mounted){
-       context.read<CourseDetailBloc>().add(TriggerLessonList(result.data!));
-       print('my lesson data is ${result.data![1].description}');
-     }
-      else{
-        print("----context is not read -----");
-     }
-    } else {
-      toastInfo(msg: "something went wong check the log laravel.log");
+      if(context.mounted){
+        context.read<CourseDetailBloc>().add(TriggerLessonList(result.data!));
+        print('my lesson data is ${result.data![1].name}');
+      }else{
+        print('----context is not read ----');
+      }
+    }else{
+      toastInfo(msg: "Something went wrong check the log");
     }
-    }
+
+  }
+
 
 
 
